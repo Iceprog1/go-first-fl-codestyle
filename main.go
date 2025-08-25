@@ -9,39 +9,51 @@ import (
 func attack(charName, charClass string) string {
 	if charClass == "warrior" {
 		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(3, 5))
-	} else if charClass == "mage" {
-		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(5, 10))
-	} else if charClass == "healer" {
-		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(-3, -1))
-	} else {
-		return "неизвестный класс персонажа"
 	}
+
+	if charClass == "mage" {
+		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(5, 10))
+	}
+
+	if charClass == "healer" {
+		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(-3, -1))
+	}
+
+	return "неизвестный класс персонажа"
 }
 
 // обратите внимание на "if else" и на "else"
 func defence(charName, charClass string) string {
 	if charClass == "warrior" {
 		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+rand.Intn(10-5+1)+5)
-	} else if charClass == "mage" {
-		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+rand.Intn(2-(-2)+1)+(-2))
-	} else if charClass == "healer" {
-		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+rand.Intn(5-2+1)+2)
-	} else {
-		return "неизвестный класс персонажа"
 	}
+
+	if charClass == "mage" {
+		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+rand.Intn(2-(-2)+1)+(-2))
+	}
+
+	if charClass == "healer" {
+		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+rand.Intn(5-2+1)+2)
+	}
+
+	return "неизвестный класс персонажа"
 }
 
 // обратите внимание на "if else" и на "else"
 func special(charName, charClass string) string {
 	if charClass == "warrior" {
 		return fmt.Sprintf("%s применил специальное умение `Выносливость %d`", charName, 80+25)
-	} else if charClass == "mage" {
-		return fmt.Sprintf("%s применил специальное умение `Атака %d`", charName, 5+40)
-	} else if charClass == "healer" {
-		return fmt.Sprintf("%s применил специальное умение `Защита %d`", charName, 10+30)
-	} else {
-		return "неизвестный класс персонажа"
 	}
+
+	if charClass == "mage" {
+		return fmt.Sprintf("%s применил специальное умение `Атака %d`", charName, 5+40)
+	}
+
+	if charClass == "healer" {
+		return fmt.Sprintf("%s применил специальное умение `Защита %d`", charName, 10+30)
+	}
+
+	return "неизвестный класс персонажа"
 }
 
 // здесь обратите внимание на имена параметров
